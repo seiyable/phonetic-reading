@@ -9,14 +9,15 @@
 }
 
 .Index-title {
-  font-size: 64px;
-  margin-bottom: 40px;
+  font-size: 80px;
+  margin-top: 80px;
+  margin-bottom: 60px;
 }
 
 .Index-textarea {
   min-width: 600px;
   border-style: none;
   padding: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   border-radius: 4px;
 }
