@@ -1,0 +1,22 @@
+.Index {
+  height: 100vh;
+  width: 100vh;
+  background-image: linear-gradient(to bottom right, mintcream, lightblue);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Index-title {
+  font-size: 64px;
+  margin-bottom: 40px;
+}
+
+.Index-textarea {
+  min-width: 600px;
+  border-style: none;
+  padding: 10px;
+  margin-bottom: 30px;
+  border-radius: 4px;
+}

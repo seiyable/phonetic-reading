@@ -1,0 +1,33 @@
+.ActionButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  padding: 20px 40px;
+  min-width: 200px;
+  background-image: linear-gradient(to bottom right, lightgreen, mediumseagreen);
+  border-radius: 4px;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  user-select: none;
+}
+
+.ActionButton::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to bottom right, sandybrown, orangered);
+  border-radius: 4px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity .2s linear;
+}
+
+.ActionButton:hover::before {
+  opacity: 1;
+}
