@@ -16,7 +16,11 @@ class Index extends React.Component {
     };
 
     const handleClick = (e) => {
-      this.props.setSourceText(this.state.text);
+      if (this.state.text.length > 0) {
+        this.props.setSourceText(this.state.text);
+      } else {
+        alert('Please input text!');
+      }
     };
 
     return (
