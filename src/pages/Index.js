@@ -1,40 +1,38 @@
 import React from 'react';
 import './Index.css';
-import ActionButton from '../components/ActionButton';
+import TextField from 'components/TextField';
+import ActionButton from 'components/ActionButton';
 import {connect} from 'react-redux';
-import actionCreators from '../redux/actionCreators';
+import actionCreators from 'redux/actionCreators';
 
-class Index extends React.Component {
+export class Index extends React.Component {
   constructor(props) {
     super(props);
     this.state = {text: ''};
+    this.handleInput = this.handleInput.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleInput(e) {
+    this.setState({text: e.target.value});
+  }
+
+  handleClick(e) {
+    if (this.state.text.length > 0) {
+      this.props.setSourceText(this.state.text);
+    } else {
+      alert('Please input text!');
+    }
   }
 
   render() {
-    const handleInput = (e) => {
-      this.setState({text: e.target.value});
-    };
-
-    const handleClick = (e) => {
-      if (this.state.text.length > 0) {
-        this.props.setSourceText(this.state.text);
-      } else {
-        alert('Please input text!');
-      }
-    };
-
     return (
       <div className="Index">
         <h1 className="Index-title">
           Phonetic Reading
         </h1>
-        <textarea
-          className="Index-textarea"
-          placeholder="Paste your text here"
-          rows="8"
-          onInput={handleInput}
-        />
-        <ActionButton handleClick={handleClick}>
+        <TextField handleInput={this.handleInput} />
+        <ActionButton handleClick={this.handleClick}>
           START
         </ActionButton>
       </div>
