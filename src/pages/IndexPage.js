@@ -1,11 +1,12 @@
 import React from 'react';
-import './Index.css';
+import './IndexPage.css';
 import TextField from 'components/TextField';
 import ActionButton from 'components/ActionButton';
 import {connect} from 'react-redux';
 import actionCreators from 'redux/actionCreators';
+import {Link} from 'react-router-dom';
 
-export class Index extends React.Component {
+export class IndexPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {text: ''};
@@ -26,18 +27,21 @@ export class Index extends React.Component {
   }
 
   render() {
+    const linkTo = this.state.text.length > 0 ? '/read' : '';
     return (
       <div className="Index">
         <h1 className="Index-title">
           Phonetic Reading
         </h1>
         <TextField handleInput={this.handleInput} />
-        <ActionButton handleClick={this.handleClick}>
-          START
-        </ActionButton>
+        <Link to={linkTo}>
+          <ActionButton handleClick={this.handleClick}>
+            START
+          </ActionButton>
+        </Link>
       </div>
     );
   }
 }
 
-export default connect(null, actionCreators)(Index);
+export default connect(null, actionCreators)(IndexPage);

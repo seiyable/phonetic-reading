@@ -1,13 +1,15 @@
 import React from 'react';
 import './App.css';
 import {Switch, Route} from 'react-router-dom';
-import Index from './pages/Index';
+import IndexPage from './pages/IndexPage';
+import ReadPage from './pages/ReadPage';
 
 export default () => {
   return (
     <div className="App">
       <Switch>
-        <Route path="/" component={Index} />
+        <Route path="/" exact component={IndexPage} />
+        <Route path="/read" component={ReadPage} />
       </Switch>
     </div>
   );
